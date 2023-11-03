@@ -1,6 +1,4 @@
-package org.example;
-
-public class StringCaseChanger implements StringDrink.StringTransformer {
+public class StringCaseChanger implements StringTransformer {
     @Override
     public void execute(StringDrink drink) {
         StringBuilder str  = new StringBuilder("");
@@ -14,5 +12,10 @@ public class StringCaseChanger implements StringDrink.StringTransformer {
             }
         }
         drink.setText(str.toString());
+    }
+
+    @Override
+    public void undo(StringDrink drink) {
+        execute(drink);
     }
 }

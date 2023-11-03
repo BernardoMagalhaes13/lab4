@@ -1,5 +1,3 @@
-package org.example;
-
 public class StringDrink {
     private String Text;
     public StringDrink(String Text) {

@@ -1,6 +1,4 @@
-package org.example;
-
-public class StringReplacer implements StringDrink.StringTransformer {
+public class StringReplacer implements StringTransformer {
     private char oldchar;
     private char newchar;
     public StringReplacer(char oldchar, char newchar) {
@@ -10,5 +8,10 @@ public class StringReplacer implements StringDrink.StringTransformer {
     @Override
     public void execute(StringDrink drink) {
         drink.setText(drink.getText().replace(this.oldchar, this.newchar));
+    }
+
+    @Override
+    public void undo(StringDrink drink) {
+        drink.setText(drink.getText().replace(this.newchar, this.oldchar));
     }
 }
